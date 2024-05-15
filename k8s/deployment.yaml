@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-mongo
+  name: spring-mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-mongo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-mongo
+    spec:
+      containers:
+      - image: ykhadilkar/spring-mongo
+        name: spring-mongo
+        resources: {}
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080
+        lifecycle:
+          preStop:
+            exec:
+                command: [ "sh", "-c", "sleep 10" ]
+        volumeMounts:
+          - name: config-volume
+            mountPath: /workspace/config
+      volumes:
+        - name: config-volume
+          secret:
+            secretName: spring-mongo-secret
+status: {}
