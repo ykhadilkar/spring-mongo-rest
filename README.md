@@ -1,5 +1,5 @@
 ![example workflow](https://github.com/ykhadilkar/spring-mongo-rest/actions/workflows/maven.yml/badge.svg)
-
+![example workflow](https://github.com/ykhadilkar/spring-mongo-rest/actions/workflows/release.yml/badge.svg)
 # Simple Spring Boot + MongoDB APIs
 ## Local Run
 - Run Mongo DB in docker container and expose 27027 on localhost
