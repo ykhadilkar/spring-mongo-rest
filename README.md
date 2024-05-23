@@ -5,7 +5,7 @@
 - Run Mongo DB in docker container and expose 27027 on localhost
 - Start the app by running `./mvnw spring-boot:run`
 - Access the app - localhost:8080/people
-- Add sample data `curl -k -X POST -H 'Content-Type: application/json' localhost:8080/people -d '{"firstName": "Joe", "lastName": "Doe", "email":"jdoe@gmail.com"}'`
+- Add sample data `curl -k -X POST -H 'Content-Type: application/json' localhost:8080/people -d '{"firstName": "John", "lastName": "Doe", "email":"jdoe@gmail.com"}'`
 
 ## Deploy on K8s
 - Build the image `./mvnw spring-boot:build-image`

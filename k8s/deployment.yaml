@@ -17,6 +17,7 @@ spec:
       labels:
         app: spring-mongo
     spec:
+      serviceAccountName: spring-mongo-rest-sa
       containers:
       - image: ykhadilkar/spring-mongo
         name: spring-mongo
