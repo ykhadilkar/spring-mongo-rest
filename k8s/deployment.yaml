@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccountName: spring-mongo-rest-sa
       containers:
-      - image: ykhadilkar/spring-mongo
+      - image: ykhadilkar/spring-mongo-rest
         name: spring-mongo
         resources: {}
         livenessProbe:
