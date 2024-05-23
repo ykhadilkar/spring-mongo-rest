@@ -6,6 +6,7 @@
 - Start the app by running `./mvnw spring-boot:run`
 - Access the app - localhost:8080/people
 - Add sample data `curl -k -X POST -H 'Content-Type: application/json' localhost:8080/people -d '{"firstName": "John", "lastName": "Doe", "email":"jdoe@gmail.com"}'`
+- Delete a record `curl -X DELETE http://localhost:8080/people/664f3d089336a47404148b60`
 
 ## Deploy on K8s
 - Build the image `./mvnw spring-boot:build-image`
