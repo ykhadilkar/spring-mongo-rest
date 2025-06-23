@@ -22,7 +22,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -136,5 +135,11 @@ public class AccessingMongodbDataRestApplicationTests {
 		mockMvc.perform(delete(location)).andExpect(status().isNoContent());
 
 		mockMvc.perform(get(location)).andExpect(status().isNotFound());
+	}
+
+	@Test
+	public void shouldReturnNotFoundForNonExistentEntity() throws Exception {
+		mockMvc.perform(get("/people/123456789012345678901234"))
+				.andExpect(status().isNotFound());
 	}
 }
